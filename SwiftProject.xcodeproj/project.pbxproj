@@ -13,7 +13,8 @@
 		6523725C2A4EAEB800BE16F6 /* TZWHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523725B2A4EAEB800BE16F6 /* TZWHomeViewController.swift */; };
 		6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523725E2A4EB61C00BE16F6 /* TZWTabViewController.swift */; };
 		652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372622A4EB81200BE16F6 /* TZWMineViewController.swift */; };
-		652372662A4EC29100BE16F6 /* TZWMineTopViw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */; };
+		652372662A4EC29100BE16F6 /* TZWMineTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372652A4EC29100BE16F6 /* TZWMineTopView.swift */; };
+		6523726A2A4ED1AB00BE16F6 /* TZWMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */; };
 		65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */; };
 		65BB8D182A4D29DB003289B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB8D172A4D29DB003289B6 /* Assets.xcassets */; };
 		65BB8D262A4D29DB003289B6 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D252A4D29DB003289B6 /* SwiftProjectTests.swift */; };
@@ -51,7 +52,8 @@
 		6523725B2A4EAEB800BE16F6 /* TZWHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWHomeViewController.swift; sourceTree = "<group>"; };
 		6523725E2A4EB61C00BE16F6 /* TZWTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWTabViewController.swift; sourceTree = "<group>"; };
 		652372622A4EB81200BE16F6 /* TZWMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineViewController.swift; sourceTree = "<group>"; };
-		652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineTopViw.swift; sourceTree = "<group>"; };
+		652372652A4EC29100BE16F6 /* TZWMineTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineTopView.swift; sourceTree = "<group>"; };
+		652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageViewController.swift; sourceTree = "<group>"; };
 		65BB8D0B2A4D29DA003289B6 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65BB8D172A4D29DB003289B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 		652372582A4EAE6D00BE16F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				652372672A4ED18D00BE16F6 /* Message */,
 				652372602A4EB7EE00BE16F6 /* Mine */,
 				652372592A4EAE7500BE16F6 /* Home */,
 			);
@@ -178,9 +181,25 @@
 		652372642A4EC26C00BE16F6 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */,
+				652372652A4EC29100BE16F6 /* TZWMineTopView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		652372672A4ED18D00BE16F6 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				652372682A4ED19600BE16F6 /* ViewController */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		652372682A4ED19600BE16F6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		65BB8D022A4D29DA003289B6 = {
@@ -423,10 +442,11 @@
 			files = (
 				65BB8D4F2A4D5644003289B6 /* TZWBaseViewController.swift in Sources */,
 				6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */,
+				6523726A2A4ED1AB00BE16F6 /* TZWMessageViewController.swift in Sources */,
 				65BB8D4D2A4D531C003289B6 /* TZWApplicationWindow.swift in Sources */,
 				65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */,
 				6523725C2A4EAEB800BE16F6 /* TZWHomeViewController.swift in Sources */,
-				652372662A4EC29100BE16F6 /* TZWMineTopViw.swift in Sources */,
+				652372662A4EC29100BE16F6 /* TZWMineTopView.swift in Sources */,
 				652372572A4EAE4D00BE16F6 /* TZWNavViewController.swift in Sources */,
 				652372542A4E820900BE16F6 /* TZWColor.swift in Sources */,
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,

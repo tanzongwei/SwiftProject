@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TZWMineViewController: UIViewController {
+class TZWMineViewController: UIViewController,HideNavigationBarProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -21,10 +21,20 @@ class TZWMineViewController: UIViewController {
     
     func setUI() {
         self.view.backgroundColor = UIColor.white
+        
+        self.view.addSubview(self.topView)
+        
+        self.topView.snp.makeConstraints { make in
+            make.left.right.top.equalTo(self.view)
+            make.height.equalTo(44 + SL_SAFE_AREA_INSETS_TOP)
+        }
     }
 
     // MARK:懒加载
     
-    
+    lazy var topView: TZWMineTopView = {
+        let topView = TZWMineTopView(frame: CGRectZero)
+        return topView
+    }()
 
 }
