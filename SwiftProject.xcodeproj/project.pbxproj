@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372502A4E71EC00BE16F6 /* TZWConstant.swift */; };
+		652372542A4E820900BE16F6 /* TZWColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372532A4E820900BE16F6 /* TZWColor.swift */; };
+		652372572A4EAE4D00BE16F6 /* TZWNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372562A4EAE4D00BE16F6 /* TZWNavViewController.swift */; };
+		6523725C2A4EAEB800BE16F6 /* TZWHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523725B2A4EAEB800BE16F6 /* TZWHomeViewController.swift */; };
+		6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6523725E2A4EB61C00BE16F6 /* TZWTabViewController.swift */; };
+		652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372622A4EB81200BE16F6 /* TZWMineViewController.swift */; };
+		652372662A4EC29100BE16F6 /* TZWMineTopViw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */; };
 		65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */; };
 		65BB8D182A4D29DB003289B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB8D172A4D29DB003289B6 /* Assets.xcassets */; };
 		65BB8D262A4D29DB003289B6 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D252A4D29DB003289B6 /* SwiftProjectTests.swift */; };
@@ -38,6 +45,13 @@
 /* Begin PBXFileReference section */
 		15388191ED186DC9A2955E11 /* Pods-SwiftProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.release.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.release.xcconfig"; sourceTree = "<group>"; };
 		16CBBBC50DF058BE5A36A106 /* libPods-SwiftProject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftProject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		652372502A4E71EC00BE16F6 /* TZWConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWConstant.swift; sourceTree = "<group>"; };
+		652372532A4E820900BE16F6 /* TZWColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWColor.swift; sourceTree = "<group>"; };
+		652372562A4EAE4D00BE16F6 /* TZWNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWNavViewController.swift; sourceTree = "<group>"; };
+		6523725B2A4EAEB800BE16F6 /* TZWHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWHomeViewController.swift; sourceTree = "<group>"; };
+		6523725E2A4EB61C00BE16F6 /* TZWTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWTabViewController.swift; sourceTree = "<group>"; };
+		652372622A4EB81200BE16F6 /* TZWMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineViewController.swift; sourceTree = "<group>"; };
+		652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineTopViw.swift; sourceTree = "<group>"; };
 		65BB8D0B2A4D29DA003289B6 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65BB8D172A4D29DB003289B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +101,88 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6523724F2A4E71A900BE16F6 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				652372502A4E71EC00BE16F6 /* TZWConstant.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		652372522A4E81B100BE16F6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				652372532A4E820900BE16F6 /* TZWColor.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		652372552A4EADF800BE16F6 /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				652372562A4EAE4D00BE16F6 /* TZWNavViewController.swift */,
+			);
+			path = Nav;
+			sourceTree = "<group>";
+		};
+		652372582A4EAE6D00BE16F6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				652372602A4EB7EE00BE16F6 /* Mine */,
+				652372592A4EAE7500BE16F6 /* Home */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		652372592A4EAE7500BE16F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6523725A2A4EAE9600BE16F6 /* ViewController */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		6523725A2A4EAE9600BE16F6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6523725B2A4EAEB800BE16F6 /* TZWHomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6523725D2A4EB60100BE16F6 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				6523725E2A4EB61C00BE16F6 /* TZWTabViewController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		652372602A4EB7EE00BE16F6 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				652372642A4EC26C00BE16F6 /* View */,
+				652372612A4EB7F500BE16F6 /* ViewController */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		652372612A4EB7F500BE16F6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				652372622A4EB81200BE16F6 /* TZWMineViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		652372642A4EC26C00BE16F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				652372652A4EC29100BE16F6 /* TZWMineTopViw.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		65BB8D022A4D29DA003289B6 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +208,11 @@
 		65BB8D0D2A4D29DA003289B6 /* SwiftProject */ = {
 			isa = PBXGroup;
 			children = (
+				6523725D2A4EB60100BE16F6 /* Tab */,
+				652372582A4EAE6D00BE16F6 /* Main */,
+				652372552A4EADF800BE16F6 /* Nav */,
+				652372522A4E81B100BE16F6 /* Category */,
+				6523724F2A4E71A900BE16F6 /* Tool */,
 				65BB8D412A4D2E30003289B6 /* Common */,
 				65BB8D3E2A4D2C94003289B6 /* Login */,
 				65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */,
@@ -161,7 +262,6 @@
 				7575E49FDFD7E96DF4E61351 /* Pods-SwiftProject.debug.xcconfig */,
 				15388191ED186DC9A2955E11 /* Pods-SwiftProject.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -322,9 +422,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				65BB8D4F2A4D5644003289B6 /* TZWBaseViewController.swift in Sources */,
+				6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */,
 				65BB8D4D2A4D531C003289B6 /* TZWApplicationWindow.swift in Sources */,
 				65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */,
+				6523725C2A4EAEB800BE16F6 /* TZWHomeViewController.swift in Sources */,
+				652372662A4EC29100BE16F6 /* TZWMineTopViw.swift in Sources */,
+				652372572A4EAE4D00BE16F6 /* TZWNavViewController.swift in Sources */,
+				652372542A4E820900BE16F6 /* TZWColor.swift in Sources */,
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,
+				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
+				652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

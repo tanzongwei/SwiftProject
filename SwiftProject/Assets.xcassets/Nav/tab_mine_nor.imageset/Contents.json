@@ -1,15 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "540×540.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "tab_mine_nor@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "tab_mine_nor@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
