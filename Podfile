@@ -7,5 +7,7 @@ target 'SwiftProject' do
   pod 'Kingfisher'
   
   pod 'SnapKit'
-
+  
+  pod 'PromiseKit'
+  pod "MBProgressHUD"
 end
