@@ -28,7 +28,7 @@ class TZWTabViewController: UITabBarController {
         mineNav.tabBarItem = UITabBarItem(title: "我", image: UIImage(named: "tab_mine_nor"), tag: 2)
         
         viewControllers = [homeNav,messageNav,mineNav]
-        
+        self.tabBar.backgroundColor = UIColor.white
     }
     
     // MARK: 懒加载

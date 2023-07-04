@@ -27,8 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     class func showLogin() {
         
-//        let vc = TZWLoginViewController()
-//        UIApplication.TZWApplicationWindow?.rootViewController = vc
+        let vc = TZWLoginViewController()
+        let nav = TZWNavViewController(rootViewController: vc)
+        UIApplication.TZWApplicationWindow?.rootViewController = nav
     }
     
     

@@ -2,6 +2,10 @@
 # platform :ios, '9.0'
 
 target 'SwiftProject' do
+  # 网络请求
+  pod 'Moya/ReactiveSwift'
+  pod 'Kingfisher'
+  
   pod 'SnapKit'
 
 end

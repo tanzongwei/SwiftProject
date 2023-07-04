@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-private func SLSafeAreaInsets() -> UIEdgeInsets {
+public func SLSafeAreaInsets() -> UIEdgeInsets {
     
     let window = UIApplication.shared.windows.last
     var insets:UIEdgeInsets = UIEdgeInsets.zero
@@ -19,7 +19,7 @@ private func SLSafeAreaInsets() -> UIEdgeInsets {
     return insets;
 }
 
-private func SLMainThreadSafeAreaInsets() -> UIEdgeInsets {
+public func SLMainThreadSafeAreaInsets() -> UIEdgeInsets {
     var insets: UIEdgeInsets = UIEdgeInsets.zero;
     
     if (Thread.isMainThread) {
@@ -40,6 +40,8 @@ let SL_SAFE_AREA_INSETS_BOTTOM  = SL_SAFE_AREA_INSETS.bottom
 
 let SL_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SL_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
+let SL_SCREEN_BOUNDS = UIScreen.main.bounds
+let TZWNAVHEIGHT = 44.0
 
 class TZWConstant: NSObject {
 

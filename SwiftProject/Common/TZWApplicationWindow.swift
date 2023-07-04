@@ -7,11 +7,9 @@
 
 import UIKit
 
-//extension UIApplication{
-//    static var TZWApplicationWindow: UIWindow? {
-//        guard let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
-//            return nil
-//        }
-//        return sceneDelegate.window
-//    }
-//}
+extension UIApplication {
+    static var TZWApplicationWindow: UIWindow? {
+        return UIApplication.shared.delegate?.window?.flatMap{$0}
+    }
+}
+
