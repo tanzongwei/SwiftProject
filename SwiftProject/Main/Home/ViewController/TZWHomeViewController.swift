@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TZWHomeViewController: UIViewController {
+class TZWHomeViewController: TZWBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

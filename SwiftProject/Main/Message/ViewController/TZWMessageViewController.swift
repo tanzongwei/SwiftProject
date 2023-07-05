@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TZWMessageViewController: UIViewController {
+class TZWMessageViewController: TZWBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

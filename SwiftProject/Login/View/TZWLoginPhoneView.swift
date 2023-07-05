@@ -56,6 +56,7 @@ class TZWLoginPhoneView: UIView {
         textField.textColor = UIColor.init(hexString: "#1A1A1A")
         textField.clearButtonMode = .whileEditing
         textField.keyboardType = .numberPad
+        textField.text = "18000000152"
         return textField
     }()
 }

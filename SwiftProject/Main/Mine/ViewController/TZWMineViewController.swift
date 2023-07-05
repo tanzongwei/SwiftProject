@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TZWMineViewController: UIViewController,HideNavigationBarProtocol {
+class TZWMineViewController: TZWBaseViewController,HideNavigationBarProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

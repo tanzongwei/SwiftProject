@@ -12,7 +12,7 @@ class TZWServerHandle {
     class func getSecret(params:[String: Any]) -> [String: Any] {
         var par = params
         par["osType"] = "ios"
-        var ctime = String.init(Int(Date.init().timeIntervalSince1970 * 1000))
+        let ctime = String.init(Int(Date.init().timeIntervalSince1970 * 1000))
         par["ctime"] = ctime
         par["appName"] = "camhomme_iphone"
         par["isEnc"] = 0

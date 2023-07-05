@@ -61,7 +61,7 @@ class TZWLoginViewController: TZWBaseViewController {
     }
     
     @objc func didPressCheckLoginBtn() {
-      _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: "18819476656")).done
+        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
         {(result:TZWUserInfoModel?) in
 
         }
