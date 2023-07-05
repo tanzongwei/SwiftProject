@@ -35,14 +35,14 @@ struct TZWServer {
 struct TZWServerRespond<Payload: Decodable>: Decodable {
     var code: Int
     var msg: String?
-    var data: Payload?
-    var currentTime: TimeInterval?
+    var data: Bool?
+    var haspsw: Bool?
     
     enum CodingKeys: CodingKey {
         case code
         case msg
         case data
-        case currentTime
+        case haspsw
     }
     
     init(from decoder: Decoder) throws {
@@ -54,18 +54,17 @@ struct TZWServerRespond<Payload: Decodable>: Decodable {
         } else {
             self.code = -1
         }
-        if container.contains(.currentTime) {
-            self.currentTime = try container.decode(TimeInterval.self, forKey: CodingKeys.currentTime)
-
-        }
         
         if container.contains(.data) {
-            self.data = try container.decode(Payload.self, forKey: CodingKeys.data)
+            self.data = try container.decode(Bool.self, forKey: CodingKeys.data)
         }
 
         if container.contains(.msg) {
             self.msg = try container.decode(String.self, forKey: CodingKeys.msg)
-
+        }
+        
+        if container.contains(.haspsw) {
+            self.haspsw = try container.decode(Bool.self, forKey: CodingKeys.haspsw)
         }
 
     }
@@ -107,14 +106,16 @@ extension MoyaProvider {
                         let decoder = JSONDecoder()
                         let serverData = try
                         decoder.decode(TZWServerRespond<T>.self, from: response.data)
-                        if serverData.code == 1000102 {
+                        if serverData.code == 205 ||
+                           serverData.code == 216 ||
+                           serverData.code == 217 {
                             // 退出登录
                         }
-                        guard serverData.code == 1 else {
+                        guard serverData.code == 200 else {
                             throw ServerError.serverError(code: serverData.code, msg: serverData.msg)
                         }
                         
-                        r.fulfill(serverData.data)
+                        r.fulfill(serverData.haspsw as? T)
                     } catch {
                         r.reject(error)
                     }
