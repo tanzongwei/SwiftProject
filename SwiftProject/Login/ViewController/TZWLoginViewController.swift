@@ -10,23 +10,15 @@ import Moya
 
 class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NotificationCenter.default.addObserver(self, selector: #selector(leaveLogin), name: Notification.Name("leaveLoginNotification"), object: nil)
         setUI()
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: false)
-    }
-    
     
     func setUI() {
         self.view.backgroundColor = UIColor.white
@@ -66,6 +58,11 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
         }
     }
     
+    // MARK: 通知处理
+    @objc func leaveLogin() {
+        self.dismiss(animated: true)
+    }
+    
     // MARK: 监听事件
     
     @objc func didPressBackBtn() {
@@ -73,16 +70,14 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
     }
     
     @objc func didPressCheckLoginBtn() {
-        let pwdVC = TZWInputPasswordViewController()
-        navigationController?.pushViewController(pwdVC, animated: true)
-        
-//        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
-//        {(result:Bool?) in
-//            if result! {
-//                let pwdVC = TZWInputPasswordViewController()
-//                self.navigationController?.pushViewController(pwdVC, animated: true)
-//            }
-//        }
+
+        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
+        {(result:Bool?) in
+            if result! {
+                let pwdVC = TZWInputPasswordViewController()
+                self.navigationController?.pushViewController(pwdVC, animated: true)
+            }
+        }
     }
     
     // MARK: 懒加载

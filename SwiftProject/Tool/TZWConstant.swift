@@ -42,6 +42,7 @@ let SL_SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SL_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 let SL_SCREEN_BOUNDS = UIScreen.main.bounds
 let TZWNAVHEIGHT = 44.0
+let SL_SAFE_AREA_INSETS_TOP_NAVHEIGHT = SL_SAFE_AREA_INSETS_TOP + TZWNAVHEIGHT
 
 class TZWConstant: NSObject {
 

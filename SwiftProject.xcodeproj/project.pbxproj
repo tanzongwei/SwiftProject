@@ -36,6 +36,7 @@
 		65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2517D2A542E0F0087A5FB /* NSDictionary+BASign.m */; };
 		65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */; };
 		65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */; };
+		65C251C12A566D770087A5FB /* TZWLoginPwdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */; };
 		A3E6B07EF0F61E28D6BC5D0F /* libPods-SwiftProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBBBC50DF058BE5A36A106 /* libPods-SwiftProject.a */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		65C2517E2A542E0F0087A5FB /* NSDictionary+BASign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BASign.h"; sourceTree = "<group>"; };
 		65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPage.swift; sourceTree = "<group>"; };
 		65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWInputPasswordViewController.swift; sourceTree = "<group>"; };
+		65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPwdView.swift; sourceTree = "<group>"; };
 		7575E49FDFD7E96DF4E61351 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				65C251672A53B65F0087A5FB /* TZWLoginPhoneView.swift */,
+				65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				65C251742A541F8F0087A5FB /* TZWServerHandle.swift in Sources */,
 				652372542A4E820900BE16F6 /* TZWColor.swift in Sources */,
 				65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */,
+				65C251C12A566D770087A5FB /* TZWLoginPwdView.swift in Sources */,
 				65C251722A5418880087A5FB /* TZWUserInfoModel.swift in Sources */,
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,
 				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
