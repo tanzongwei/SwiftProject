@@ -25,7 +25,7 @@ class TZWHomeViewController: TZWBaseViewController,HideNavigationBarProtocol {
     }
     
     func setUI() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.gray
         view.addSubview(loginBtn)
     }
     

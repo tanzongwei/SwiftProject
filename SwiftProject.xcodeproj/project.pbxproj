@@ -37,6 +37,7 @@
 		65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */; };
 		65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */; };
 		65C251C12A566D770087A5FB /* TZWLoginPwdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */; };
+		65C251C52A56A4960087A5FB /* TZWCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C42A56A4960087A5FB /* TZWCommunityViewController.swift */; };
 		A3E6B07EF0F61E28D6BC5D0F /* libPods-SwiftProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBBBC50DF058BE5A36A106 /* libPods-SwiftProject.a */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPage.swift; sourceTree = "<group>"; };
 		65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWInputPasswordViewController.swift; sourceTree = "<group>"; };
 		65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPwdView.swift; sourceTree = "<group>"; };
+		65C251C42A56A4960087A5FB /* TZWCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWCommunityViewController.swift; sourceTree = "<group>"; };
 		7575E49FDFD7E96DF4E61351 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 		652372582A4EAE6D00BE16F6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				65C251C22A56A45D0087A5FB /* Community */,
 				652372672A4ED18D00BE16F6 /* Message */,
 				652372602A4EB7EE00BE16F6 /* Mine */,
 				652372592A4EAE7500BE16F6 /* Home */,
@@ -401,6 +404,22 @@
 			path = NSDictionary;
 			sourceTree = "<group>";
 		};
+		65C251C22A56A45D0087A5FB /* Community */ = {
+			isa = PBXGroup;
+			children = (
+				65C251C32A56A4630087A5FB /* ViewController */,
+			);
+			path = Community;
+			sourceTree = "<group>";
+		};
+		65C251C32A56A4630087A5FB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				65C251C42A56A4960087A5FB /* TZWCommunityViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		E557C64A17386624A2D402FA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,6 +609,7 @@
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,
 				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
 				65C251542A5260A80087A5FB /* TZWMineInfoView.swift in Sources */,
+				65C251C52A56A4960087A5FB /* TZWCommunityViewController.swift in Sources */,
 				65C251682A53B65F0087A5FB /* TZWLoginPhoneView.swift in Sources */,
 				65C251792A542D7F0087A5FB /* NSString+BAEncrypt.m in Sources */,
 				652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */,
