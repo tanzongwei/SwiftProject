@@ -16,6 +16,7 @@ class TZWMineViewController: TZWBaseViewController,HideNavigationBarProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppDelegate.showLogin(isLogin: true)
         setUI()
     }
     

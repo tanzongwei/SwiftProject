@@ -8,13 +8,25 @@
 import UIKit
 import Moya
 
-class TZWLoginViewController: TZWBaseViewController {
+class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setUI()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     
     func setUI() {
         self.view.backgroundColor = UIColor.white
@@ -57,16 +69,20 @@ class TZWLoginViewController: TZWBaseViewController {
     // MARK: 监听事件
     
     @objc func didPressBackBtn() {
-        
+        self.dismiss(animated: true)
     }
     
     @objc func didPressCheckLoginBtn() {
-        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
-        {(result:Bool?) in
-            if result! {
-                
-            }
-        }
+        let pwdVC = TZWInputPasswordViewController()
+        navigationController?.pushViewController(pwdVC, animated: true)
+        
+//        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
+//        {(result:Bool?) in
+//            if result! {
+//                let pwdVC = TZWInputPasswordViewController()
+//                self.navigationController?.pushViewController(pwdVC, animated: true)
+//            }
+//        }
     }
     
     // MARK: 懒加载

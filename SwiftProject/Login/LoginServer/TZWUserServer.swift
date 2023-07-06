@@ -94,4 +94,9 @@ extension TZWUserServer: TargetType {
             return nil
         }
     }
+    
+    
+    static func isLogin(isLogin: Bool) -> Bool {
+        return isLogin
+    }
 }

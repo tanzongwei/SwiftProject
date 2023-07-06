@@ -16,18 +16,14 @@ class TZWNavViewController: UINavigationController {
     }
     
     private func setUI() {
-//        self.view.addSubview(self.backButton)
-//        
-//        self.backButton.snp.makeConstraints { make in
-//            make.left.equalTo(16)
-//            make.height.width.equalTo(44)
-//            make.top.equalTo(SL_SAFE_AREA_INSETS_TOP)
-//        }
+        
+        let backButtonItem = UIBarButtonItem(customView: backButton)
+        navigationItem.leftBarButtonItem = backButtonItem
     }
     
     // MARK:监听事件
    @objc func didPressBackBtn() {
-        print("点击返回")
+       self.popViewController(animated: true)
     }
     
     // MARK: 懒加载
@@ -40,9 +36,15 @@ class TZWNavViewController: UINavigationController {
 }
 
 protocol HideNavigationBarProtocol where Self: UIViewController {}
-
+//
 extension TZWNavViewController : UINavigationControllerDelegate {
     
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        let backButtonItem = UIBarButtonItem(customView: backButton)
+        viewController.navigationItem.leftBarButtonItem = backButtonItem
+        super.pushViewController(viewController, animated: animated)
+    }
+
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if (viewController is HideNavigationBarProtocol) {
             self.setNavigationBarHidden(true, animated: animated)

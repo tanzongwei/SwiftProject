@@ -25,11 +25,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    class func showLogin() {
-        
-        let vc = TZWLoginViewController()
-        let nav = TZWNavViewController(rootViewController: vc)
-        UIApplication.TZWApplicationWindow?.rootViewController = nav
+    class func showLogin(isLogin: Bool) {
+//        if isLogin {
+//            let vc = TZWLoginViewController()
+//            let nav = TZWNavViewController(rootViewController: vc)
+//            UIApplication.TZWApplicationWindow?.rootViewController = nav
+//        } else {
+//            let tab = TZWTabViewController()
+//            UIApplication.TZWApplicationWindow?.rootViewController = tab
+//        }
+
     }
     
     

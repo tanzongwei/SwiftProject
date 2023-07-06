@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TZWMessageViewController: TZWBaseViewController {
+class TZWMessageViewController: TZWBaseViewController,HideNavigationBarProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()

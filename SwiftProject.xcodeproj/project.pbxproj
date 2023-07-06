@@ -34,6 +34,8 @@
 		65C251742A541F8F0087A5FB /* TZWServerHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251732A541F8F0087A5FB /* TZWServerHandle.swift */; };
 		65C251792A542D7F0087A5FB /* NSString+BAEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C251782A542D7F0087A5FB /* NSString+BAEncrypt.m */; };
 		65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2517D2A542E0F0087A5FB /* NSDictionary+BASign.m */; };
+		65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */; };
+		65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */; };
 		A3E6B07EF0F61E28D6BC5D0F /* libPods-SwiftProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBBBC50DF058BE5A36A106 /* libPods-SwiftProject.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		65C251782A542D7F0087A5FB /* NSString+BAEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BAEncrypt.m"; sourceTree = "<group>"; };
 		65C2517D2A542E0F0087A5FB /* NSDictionary+BASign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BASign.m"; sourceTree = "<group>"; };
 		65C2517E2A542E0F0087A5FB /* NSDictionary+BASign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BASign.h"; sourceTree = "<group>"; };
+		65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPage.swift; sourceTree = "<group>"; };
+		65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWInputPasswordViewController.swift; sourceTree = "<group>"; };
 		7575E49FDFD7E96DF4E61351 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -326,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				65BB8D502A4D5847003289B6 /* TZWLoginViewController.swift */,
+				65C251BC2A556CEA0087A5FB /* TZWLoginPage.swift */,
+				65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -559,6 +565,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */,
+				65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */,
 				65BB8D4F2A4D5644003289B6 /* TZWBaseViewController.swift in Sources */,
 				65C2515B2A5297930087A5FB /* UIView+LayoutProperty.m in Sources */,
 				6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */,
@@ -574,6 +581,7 @@
 				652372572A4EAE4D00BE16F6 /* TZWNavViewController.swift in Sources */,
 				65C251742A541F8F0087A5FB /* TZWServerHandle.swift in Sources */,
 				652372542A4E820900BE16F6 /* TZWColor.swift in Sources */,
+				65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */,
 				65C251722A5418880087A5FB /* TZWUserInfoModel.swift in Sources */,
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,
 				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
