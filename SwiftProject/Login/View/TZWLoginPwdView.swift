@@ -52,6 +52,7 @@ class TZWLoginPwdView: UIView {
         textField.placeholder = "请输入密码"
         textField.textColor = UIColor.init(hexString: "#1A1A1A")
         textField.font = UIFont.systemFont(ofSize: 18, weight: .medium)
+        textField.text = "beauty123q"
         textField.isSecureTextEntry = true
         return textField
     }()

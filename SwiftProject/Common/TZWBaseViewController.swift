@@ -8,7 +8,7 @@
 import UIKit
 
 class TZWBaseViewController: UIViewController {
-
+    var parame: [String: Any] = [:]
     override func viewDidLoad() {
         super.viewDidLoad()
 

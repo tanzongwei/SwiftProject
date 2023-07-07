@@ -35,7 +35,7 @@ struct TZWServer {
 struct TZWServerRespond<Payload: Decodable>: Decodable {
     var code: Int
     var msg: String?
-    var data: Bool?
+    var data: Payload?
     var haspsw: Bool?
     
     enum CodingKeys: CodingKey {
@@ -56,7 +56,7 @@ struct TZWServerRespond<Payload: Decodable>: Decodable {
         }
         
         if container.contains(.data) {
-            self.data = try container.decode(Bool.self, forKey: CodingKeys.data)
+            self.data = try? container.decode(Payload.self, forKey: CodingKeys.data)
         }
 
         if container.contains(.msg) {
@@ -114,9 +114,19 @@ extension MoyaProvider {
                         guard serverData.code == 200 else {
                             throw ServerError.serverError(code: serverData.code, msg: serverData.msg)
                         }
-                        
-                        r.fulfill(serverData.haspsw as? T)
+
+                        if response.request?.url?.lastPathComponent == "checkMobileExists" {
+                            r.fulfill(serverData.data)
+                        } else {
+                            r.fulfill(serverData.data)
+                        }
                     } catch {
+                        var alert = error.localizedDescription
+                        
+                        if case ServerError.serverError(_, let msg) = error {
+                            alert = msg ?? error.localizedDescription
+                        }
+                        
                         r.reject(error)
                     }
                 case .failure(let error):

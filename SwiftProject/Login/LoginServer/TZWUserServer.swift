@@ -8,7 +8,8 @@
 import Moya
 
 enum TZWUserServer {
-    case loginCheckPhone(phone: String?=nil)
+    case loginCheckPhone(phone: String?=nil,zoneNum: String?=nil)
+    case pwdLogin(phone: String?=nil,zoneNum: String?=nil,pwd: String?=nil)
     case test
 }
 
@@ -21,7 +22,8 @@ extension TZWUserServer: TargetType {
     var path: String {
         switch self {
         case .loginCheckPhone: return "member/product/checkMobileExists"
-        case .test: return ""
+        case .pwdLogin: return "member/product/doLoginByPhoneEncryption"
+        case .test: return "member/product/doLoginByPhoneEncryption"
         }
     }
     
@@ -36,21 +38,32 @@ extension TZWUserServer: TargetType {
     
     var task: Moya.Task {
         switch self {
-        case .loginCheckPhone(let phone):
+        case .loginCheckPhone(let phone,let zoneNum):
             var parameters: [String: Any] = [:]
             var param: [String: Any] = [:]
-            param["username"] = phone?.ba_aes128()!
-            param["zoneNum"] = 86
+            let phoneString: NSString = NSString(string: phone!)
+            param["username"] = phoneString.ba_aes128()
+            param["zoneNum"] = TZWLoginNumberCheckTool.createAreaCode(zoneNum)
             parameters = getParames(parame: param)
             let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: [])
             return .requestData(jsonData)
+        case .pwdLogin(let phone, let zoneNum, let pwd):
+            var param: [String: Any] = [:]
+            let phoneString: NSString = NSString(string: phone!)
+            param["phone"] = phoneString.ba_aes128()
+            param["password"] = NSString(string: pwd!).ba_md5()
+            param["zoneNum"] = TZWLoginNumberCheckTool.createAreaCode(zoneNum)
+            let jsonData = try! JSONSerialization.data(withJSONObject: getParames(parame: param), options: [])
+            return .requestData(jsonData)
+
         case .test:
             var parameters: [String: Any] = [:]
             var param: [String: Any] = [:]
             param["username"] = "test"
             param["zoneNum"] = "86"
             parameters = getParames(parame: param)
-            return .requestParameters(parameters: parameters, encoding: URLEncoding.queryString)
+            let jsonData = try! JSONSerialization.data(withJSONObject: parameters, options: [])
+            return .requestData(jsonData)
         }
     }
     
@@ -58,7 +71,8 @@ extension TZWUserServer: TargetType {
     private func getParames(parame: [String: Any]) -> [String: Any] {
         let parameters: [String: Any] = [:]
         var params: [String: Any] = [:]
-        let dict = NSDictionary(dictionary: TZWServerHandle.getSecret(params: parameters))
+        let dict: NSDictionary = NSDictionary(dictionary: TZWServerHandle.getSecret(params: parameters))
+        
         let paramDict = dict.ba_addSign(withParams: parame)!
         
         for(key,var value) in paramDict {

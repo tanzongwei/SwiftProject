@@ -13,6 +13,11 @@ class TZWCommunityViewController: TZWBaseViewController,HideNavigationBarProtoco
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setUI()
+    }
+    
+    private func setUI() {
+        view.backgroundColor = UIColor.white
     }
 
 }

@@ -38,6 +38,7 @@
 		65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */; };
 		65C251C12A566D770087A5FB /* TZWLoginPwdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */; };
 		65C251C52A56A4960087A5FB /* TZWCommunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C42A56A4960087A5FB /* TZWCommunityViewController.swift */; };
+		65C251C92A57E08E0087A5FB /* TZWLoginNumberCheckTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C251C72A57E08E0087A5FB /* TZWLoginNumberCheckTool.m */; };
 		A3E6B07EF0F61E28D6BC5D0F /* libPods-SwiftProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16CBBBC50DF058BE5A36A106 /* libPods-SwiftProject.a */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,8 @@
 		65C251BE2A5651A50087A5FB /* TZWInputPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWInputPasswordViewController.swift; sourceTree = "<group>"; };
 		65C251C02A566D770087A5FB /* TZWLoginPwdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWLoginPwdView.swift; sourceTree = "<group>"; };
 		65C251C42A56A4960087A5FB /* TZWCommunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWCommunityViewController.swift; sourceTree = "<group>"; };
+		65C251C72A57E08E0087A5FB /* TZWLoginNumberCheckTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TZWLoginNumberCheckTool.m; sourceTree = "<group>"; };
+		65C251C82A57E08E0087A5FB /* TZWLoginNumberCheckTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TZWLoginNumberCheckTool.h; sourceTree = "<group>"; };
 		7575E49FDFD7E96DF4E61351 /* Pods-SwiftProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftProject.debug.xcconfig"; path = "Target Support Files/Pods-SwiftProject/Pods-SwiftProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +145,7 @@
 		6523724F2A4E71A900BE16F6 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				65C251C62A57E0710087A5FB /* Utill */,
 				65C251762A542D620087A5FB /* NSDictionary */,
 				65C251752A542D510087A5FB /* NSString */,
 				65C2516D2A53F8310087A5FB /* UIView */,
@@ -420,6 +424,15 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		65C251C62A57E0710087A5FB /* Utill */ = {
+			isa = PBXGroup;
+			children = (
+				65C251C82A57E08E0087A5FB /* TZWLoginNumberCheckTool.h */,
+				65C251C72A57E08E0087A5FB /* TZWLoginNumberCheckTool.m */,
+			);
+			path = Utill;
+			sourceTree = "<group>";
+		};
 		E557C64A17386624A2D402FA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -589,6 +602,7 @@
 				65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */,
 				65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */,
 				65BB8D4F2A4D5644003289B6 /* TZWBaseViewController.swift in Sources */,
+				65C251C92A57E08E0087A5FB /* TZWLoginNumberCheckTool.m in Sources */,
 				65C2515B2A5297930087A5FB /* UIView+LayoutProperty.m in Sources */,
 				6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */,
 				65C2515E2A529B430087A5FB /* UIView+Additions.m in Sources */,

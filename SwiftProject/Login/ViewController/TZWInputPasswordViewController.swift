@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Moya
 
 class TZWInputPasswordViewController: TZWBaseViewController {
 
@@ -52,8 +53,44 @@ class TZWInputPasswordViewController: TZWBaseViewController {
     
     // MARK: 事件处理
     @objc private func didPressLoginBtn() {
-        print("点击登录按钮")
-        NotificationCenter.default.post(name: Notification.Name("leaveLoginNotification"), object: nil)
+        if pwdView.pwdTextField.text == "" {
+            return
+        }
+        let phone = parame["phone"] as! String
+        let zoneNum = parame["zoneNum"] as! String
+        showLoadingImage()
+        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.pwdLogin(phone: phone, zoneNum: zoneNum , pwd: pwdView.pwdTextField.text)).done({ [self](result:TZWUserInfoModel?)  in
+            self.hiddenLoadingImage()
+            NotificationCenter.default.post(name: Notification.Name("leaveLoginNotification"), object: nil)
+        }).catch({ error in
+            self.hiddenLoadingImage()
+            
+        })
+
+    }
+    
+    @objc private func didPressFindPwd() {
+        hiddenLoadingImage()
+    }
+    
+   private func showLoadingImage() {
+        let loadingImage: UIImage = UIImage(named: "login_loading")!
+        loginBtn.setTitle("", for: .normal)
+        loginBtn.setImage(loadingImage, for: .normal)
+        let rotationAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation.duration = 1
+        rotationAnimation.fromValue = 0
+        rotationAnimation.toValue = 2.0 * Double.pi
+        rotationAnimation.repeatCount = MAXFLOAT
+        rotationAnimation.autoreverses = false
+        rotationAnimation.isCumulative = true
+        loginBtn.imageView?.layer.add(rotationAnimation, forKey: "rotationAnimation")
+    }
+    
+   private func hiddenLoadingImage() {
+       loginBtn.setTitle("登录", for: .normal)
+       loginBtn.setImage(nil, for: .normal)
+       loginBtn.layer.removeAllAnimations()
     }
     
     // MARK: 懒加载
@@ -79,6 +116,7 @@ class TZWInputPasswordViewController: TZWBaseViewController {
         btn.setTitleColor(UIColor.init(hexString: "#2727D9"), for: .normal)
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
         btn.contentHorizontalAlignment = .right
+        btn.addTarget(self, action: #selector(didPressFindPwd), for: .touchUpInside)
         return btn
     }()
     

@@ -69,14 +69,27 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
         self.dismiss(animated: true)
     }
     
-    @objc func didPressCheckLoginBtn() {
-
-        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phoneView.phoenTextField.text)).done
-        {(result:Bool?) in
-            if result! {
+    @objc func didPressCheckLoginBtn(loginBtn: UIButton) {
+        let phone = phoneView.phoenTextField.text
+        let zoneNum = phoneView.areaCodeBtn.titleLabel?.text
+        if phone == "" {
+            return
+        }
+        
+        loginBtn.isUserInteractionEnabled = false
+        
+        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phone,zoneNum: zoneNum)).done
+        { (result: Bool?) in
+//            let (p1,p2) = result
+            loginBtn.isUserInteractionEnabled = true
+//            if result! {
                 let pwdVC = TZWInputPasswordViewController()
+                var param: [String: Any] = [:]
+                param["phone"] = phone
+                param["zoneNum"] = zoneNum
+                pwdVC.parame = param
                 self.navigationController?.pushViewController(pwdVC, animated: true)
-            }
+//            }
         }
     }
     
