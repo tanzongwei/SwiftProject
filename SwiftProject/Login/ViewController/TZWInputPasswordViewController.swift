@@ -23,6 +23,7 @@ class TZWInputPasswordViewController: TZWBaseViewController {
         view.addSubview(pwdView)
         view.addSubview(findPwdBtn)
         view.addSubview(loginBtn)
+        view.addSubview(errorWarningView)
         
         pwdLabel.snp.makeConstraints { make in
             make.left.equalTo(28)
@@ -49,6 +50,13 @@ class TZWInputPasswordViewController: TZWBaseViewController {
             make.height.equalTo(48)
             make.top.equalTo(pwdView.snp.bottom).offset(68)
         }
+        
+        errorWarningView.snp.makeConstraints { make in
+            make.left.equalTo(pwdView.snp.left)
+            make.height.equalTo(44)
+            make.right.equalTo(findPwdBtn.snp.left).offset(-15)
+            make.top.equalTo(pwdView.snp.bottom)
+        }
     }
     
     // MARK: 事件处理
@@ -58,13 +66,18 @@ class TZWInputPasswordViewController: TZWBaseViewController {
         }
         let phone = parame["phone"] as! String
         let zoneNum = parame["zoneNum"] as! String
+        loginBtn.isUserInteractionEnabled = false
         showLoadingImage()
         _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.pwdLogin(phone: phone, zoneNum: zoneNum , pwd: pwdView.pwdTextField.text)).done({ [self](result:TZWUserInfoModel?)  in
             self.hiddenLoadingImage()
+            loginBtn.isUserInteractionEnabled = true
             NotificationCenter.default.post(name: Notification.Name("leaveLoginNotification"), object: nil)
         }).catch({ error in
             self.hiddenLoadingImage()
-            
+            self.loginBtn.isUserInteractionEnabled = true
+            if case ServerError.serverError(_, let msg) = error {
+                self.errorWarningView.showWithMessage(message: msg!)
+            }
         })
 
     }
@@ -130,6 +143,11 @@ class TZWInputPasswordViewController: TZWBaseViewController {
         btn.layer.cornerRadius = 24
         btn.clipsToBounds = true
         return btn
+    }()
+    
+    lazy var errorWarningView: TZWErrorWarningView = {
+        let view = TZWErrorWarningView(frame: CGRectZero)
+        return view
     }()
 
 }
