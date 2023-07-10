@@ -66,6 +66,8 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
     // MARK: 监听事件
     
     @objc func didPressBackBtn() {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: TZWClickLoginBackName), object: nil)
+
         self.dismiss(animated: true)
     }
     
@@ -80,16 +82,13 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
         
         _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.loginCheckPhone(phone: phone,zoneNum: zoneNum)).done
         { (result: Bool?) in
-//            let (p1,p2) = result
             loginBtn.isUserInteractionEnabled = true
-//            if result! {
-                let pwdVC = TZWInputPasswordViewController()
-                var param: [String: Any] = [:]
-                param["phone"] = phone
-                param["zoneNum"] = zoneNum
-                pwdVC.parame = param
-                self.navigationController?.pushViewController(pwdVC, animated: true)
-//            }
+            let pwdVC = TZWInputPasswordViewController()
+            var param: [String: Any] = [:]
+            param["phone"] = phone
+            param["zoneNum"] = zoneNum
+            pwdVC.parame = param
+            self.navigationController?.pushViewController(pwdVC, animated: true)
         }
     }
     

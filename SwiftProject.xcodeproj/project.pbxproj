@@ -15,6 +15,8 @@
 		652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372622A4EB81200BE16F6 /* TZWMineViewController.swift */; };
 		652372662A4EC29100BE16F6 /* TZWMineTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372652A4EC29100BE16F6 /* TZWMineTopView.swift */; };
 		6523726A2A4ED1AB00BE16F6 /* TZWMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */; };
+		658039552A5BA9E500DB7DC3 /* TZWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658039542A5BA9E500DB7DC3 /* TZWUser.swift */; };
+		658039572A5BAC4400DB7DC3 /* TZWKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658039562A5BAC4400DB7DC3 /* TZWKeyConstant.swift */; };
 		65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */; };
 		65BB8D182A4D29DB003289B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB8D172A4D29DB003289B6 /* Assets.xcassets */; };
 		65BB8D262A4D29DB003289B6 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D252A4D29DB003289B6 /* SwiftProjectTests.swift */; };
@@ -30,7 +32,6 @@
 		65C251682A53B65F0087A5FB /* TZWLoginPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251672A53B65F0087A5FB /* TZWLoginPhoneView.swift */; };
 		65C2516C2A53F82B0087A5FB /* UIButton+ImageTitleSpacing.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2516B2A53F82B0087A5FB /* UIButton+ImageTitleSpacing.m */; };
 		65C251702A5414EB0087A5FB /* TZWUserServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C2516F2A5414EB0087A5FB /* TZWUserServer.swift */; };
-		65C251722A5418880087A5FB /* TZWUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251712A5418880087A5FB /* TZWUserInfoModel.swift */; };
 		65C251742A541F8F0087A5FB /* TZWServerHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C251732A541F8F0087A5FB /* TZWServerHandle.swift */; };
 		65C251792A542D7F0087A5FB /* NSString+BAEncrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C251782A542D7F0087A5FB /* NSString+BAEncrypt.m */; };
 		65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C2517D2A542E0F0087A5FB /* NSDictionary+BASign.m */; };
@@ -71,6 +72,8 @@
 		652372622A4EB81200BE16F6 /* TZWMineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineViewController.swift; sourceTree = "<group>"; };
 		652372652A4EC29100BE16F6 /* TZWMineTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMineTopView.swift; sourceTree = "<group>"; };
 		652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageViewController.swift; sourceTree = "<group>"; };
+		658039542A5BA9E500DB7DC3 /* TZWUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWUser.swift; sourceTree = "<group>"; };
+		658039562A5BAC4400DB7DC3 /* TZWKeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWKeyConstant.swift; sourceTree = "<group>"; };
 		65BB8D0B2A4D29DA003289B6 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65BB8D172A4D29DB003289B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +97,6 @@
 		65C2516A2A53F82B0087A5FB /* UIButton+ImageTitleSpacing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleSpacing.h"; sourceTree = "<group>"; };
 		65C2516B2A53F82B0087A5FB /* UIButton+ImageTitleSpacing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleSpacing.m"; sourceTree = "<group>"; };
 		65C2516F2A5414EB0087A5FB /* TZWUserServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWUserServer.swift; sourceTree = "<group>"; };
-		65C251712A5418880087A5FB /* TZWUserInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWUserInfoModel.swift; sourceTree = "<group>"; };
 		65C251732A541F8F0087A5FB /* TZWServerHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWServerHandle.swift; sourceTree = "<group>"; };
 		65C251772A542D7F0087A5FB /* NSString+BAEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+BAEncrypt.h"; sourceTree = "<group>"; };
 		65C251782A542D7F0087A5FB /* NSString+BAEncrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+BAEncrypt.m"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				65C2515F2A52B9BF0087A5FB /* Network */,
 				652372502A4E71EC00BE16F6 /* TZWConstant.swift */,
 				65C251552A527A880087A5FB /* SwiftProject-Bridging-Header.h */,
+				658039562A5BAC4400DB7DC3 /* TZWKeyConstant.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -360,7 +363,6 @@
 		65C251662A53B6390087A5FB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				65C251712A5418880087A5FB /* TZWUserInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -389,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				65C2516F2A5414EB0087A5FB /* TZWUserServer.swift */,
+				658039542A5BA9E500DB7DC3 /* TZWUser.swift */,
 			);
 			path = LoginServer;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				65C2517F2A542E0F0087A5FB /* NSDictionary+BASign.m in Sources */,
 				65C251BF2A5651A50087A5FB /* TZWInputPasswordViewController.swift in Sources */,
 				65BB8D4F2A4D5644003289B6 /* TZWBaseViewController.swift in Sources */,
+				658039552A5BA9E500DB7DC3 /* TZWUser.swift in Sources */,
 				65C251C92A57E08E0087A5FB /* TZWLoginNumberCheckTool.m in Sources */,
 				65C2515B2A5297930087A5FB /* UIView+LayoutProperty.m in Sources */,
 				6523725F2A4EB61C00BE16F6 /* TZWTabViewController.swift in Sources */,
@@ -622,8 +626,8 @@
 				652372542A4E820900BE16F6 /* TZWColor.swift in Sources */,
 				65C251BD2A556CEA0087A5FB /* TZWLoginPage.swift in Sources */,
 				65C251C12A566D770087A5FB /* TZWLoginPwdView.swift in Sources */,
-				65C251722A5418880087A5FB /* TZWUserInfoModel.swift in Sources */,
 				65BB8D512A4D5847003289B6 /* TZWLoginViewController.swift in Sources */,
+				658039572A5BAC4400DB7DC3 /* TZWKeyConstant.swift in Sources */,
 				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
 				65C251CB2A580E320087A5FB /* TZWErrorWarningView.swift in Sources */,
 				65C251542A5260A80087A5FB /* TZWMineInfoView.swift in Sources */,

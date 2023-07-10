@@ -27,11 +27,16 @@ class TZWHomeViewController: TZWBaseViewController,HideNavigationBarProtocol {
     func setUI() {
         view.backgroundColor = UIColor.gray
         view.addSubview(loginBtn)
+        view.addSubview(loginOutBtn)
     }
     
     @objc func didPressLoginBtn() {
         TZWLoginPage.share.showLogin()
 
+    }
+    
+    @objc func didPressLoginOut() {
+        TZWUser.loginOut()
     }
     
     lazy var loginBtn: UIButton = {
@@ -42,5 +47,15 @@ class TZWHomeViewController: TZWBaseViewController,HideNavigationBarProtocol {
         loginBtn.layer.cornerRadius = 4
         loginBtn.clipsToBounds = true
         return loginBtn
+    }()
+    
+    lazy var loginOutBtn: UIButton = {
+        let loginOutBtn = UIButton(frame: CGRectMake(20, loginBtn.bottom + 20, loginBtn.width, loginBtn.height))
+        loginOutBtn.setBackgroundColor(UIColor.blue, for: .normal)
+        loginOutBtn.setTitle("退出登录", for: .normal)
+        loginOutBtn.addTarget(self, action: #selector(didPressLoginOut), for: .touchUpInside)
+        loginOutBtn.layer.cornerRadius = 4
+        loginOutBtn.clipsToBounds = true
+        return loginOutBtn
     }()
 }

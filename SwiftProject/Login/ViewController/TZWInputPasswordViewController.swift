@@ -68,9 +68,15 @@ class TZWInputPasswordViewController: TZWBaseViewController {
         let zoneNum = parame["zoneNum"] as! String
         loginBtn.isUserInteractionEnabled = false
         showLoadingImage()
-        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.pwdLogin(phone: phone, zoneNum: zoneNum , pwd: pwdView.pwdTextField.text)).done({ [self](result:TZWUserInfoModel?)  in
+        _ = MoyaProvider<TZWUserServer>().TZWNetWorkRequest(.pwdLogin(phone: phone, zoneNum: zoneNum , pwd: pwdView.pwdTextField.text)).done({ [self](result:TZWUser?)  in
             self.hiddenLoadingImage()
             loginBtn.isUserInteractionEnabled = true
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            if let jsonData = try? encoder.encode(result) {
+                let jsonString = String(data: jsonData, encoding: .utf8)
+                TZWUserServer.saveUser(json: jsonString!)
+            }
             NotificationCenter.default.post(name: Notification.Name("leaveLoginNotification"), object: nil)
         }).catch({ error in
             self.hiddenLoadingImage()

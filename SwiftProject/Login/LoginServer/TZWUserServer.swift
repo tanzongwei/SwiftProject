@@ -113,4 +113,23 @@ extension TZWUserServer: TargetType {
     static func isLogin(isLogin: Bool) -> Bool {
         return isLogin
     }
+    
+    static func saveUserInfo(userInfo: TZWUser) {
+        let jsonEncode = JSONEncoder()
+        var jsonData = Data()
+        
+        do {
+            jsonData = try jsonEncode.encode(userInfo)
+        } catch  {
+        }
+        _ = String(data: jsonData, encoding: .utf8)
+        
+    }
+    
+    static func saveUser(json: String?) {
+        if json == nil {
+            return
+        }
+        UserDefaults.standard.setValue(json, forKey: TZWUserInfoKey)
+    }
 }

@@ -11,13 +11,21 @@ class TZWMineViewController: TZWBaseViewController,HideNavigationBarProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard TZWUser.isLogin() else {
+            TZWLoginPage.share.showLogin()
+            return
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        AppDelegate.showLogin(isLogin: true)
+        addNotification()
         setUI()
+    }
+    
+    private func addNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didPressLoginBack), name: Notification.Name(rawValue: TZWClickLoginBackName), object: nil)
     }
     
     func setUI() {
@@ -27,6 +35,18 @@ class TZWMineViewController: TZWBaseViewController,HideNavigationBarProtocol {
         contentView.addSubview(bgImageView)
         contentView.addSubview(topView)
         contentView.addSubview(infoView)
+
+    }
+    
+    // MARK: 事件处理
+    @objc func didPressLoginBack() {
+        if let array = navigationController?.viewControllers {
+            for viewController in array {
+                if viewController.isKind(of: TZWMineViewController.self) {
+                    self.tabBarController?.selectedIndex = 1
+                }
+            }
+        }
 
     }
 
