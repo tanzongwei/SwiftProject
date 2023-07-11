@@ -77,11 +77,18 @@ extension TZWMessageViewController: TZWCollectionPageViewDataSource, TZWMessageT
             return nil
         }
         
-        let contentView = TZWMessageContentView(frame: self.pageCollectionView.bounds)
+        let identifier = "messagePage_" + String(index)
+        var contentView = pageView.dequeueReuserView(identifier: identifier)
+        if (contentView == nil) {
+            let listView = TZWMessageContentView(frame: self.pageCollectionView.bounds)
+            listView.reuserIdentifier = identifier
+            contentView = listView
+        }
+        
         if ((index % 2) != 0) {
-            contentView.backgroundColor = UIColor.blue
+            contentView?.backgroundColor = UIColor.blue
         } else {
-            contentView.backgroundColor = UIColor.green
+            contentView!.backgroundColor = UIColor.green
         }
         return contentView
         
