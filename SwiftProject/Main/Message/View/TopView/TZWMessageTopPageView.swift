@@ -8,6 +8,7 @@
 import UIKit
 
 class TZWMessageTopPageView: UIView,TZWMessageTopItemViewDelegate {
+    var delegate: TZWMessageTopPageViewDelegate?
     var dataSources: [TZWMessageTopItemModel] = []
     var itemSource: [TZWMessageTopItemView] = []
     override init(frame: CGRect) {
@@ -39,6 +40,7 @@ class TZWMessageTopPageView: UIView,TZWMessageTopItemViewDelegate {
         var dataSource: [TZWMessageTopItemModel] = []
         for (index,title) in source.enumerated() {
             let itemModel = TZWMessageTopItemModel()
+            itemModel.index = index
             itemModel.title = title
             if (index == 0) {
                 itemModel.isSelect = true
@@ -55,6 +57,10 @@ class TZWMessageTopPageView: UIView,TZWMessageTopItemViewDelegate {
     }()
 }
 
+protocol TZWMessageTopPageViewDelegate {
+    func clickTopPage(itemModel: TZWMessageTopItemModel)
+}
+
 extension TZWMessageTopPageView {
     func didPressItemModel(btn: UIButton) {
         let btnIndex = btn.tag
@@ -67,6 +73,6 @@ extension TZWMessageTopPageView {
         selectItemModel.isSelect = true
         let item = itemSource[btnIndex]
         item.updateSelectView(itemModel: selectItemModel)
-        
+        self.delegate?.clickTopPage(itemModel: selectItemModel)
     }
 }

@@ -10,9 +10,11 @@ import UIKit
 class TZWMessageTopItemModel {
     var isSelect:Bool?
     var title: String?
-    
-    init(isSelect: Bool? = nil, title: String? = nil) {
+    var index: Int?
+    init(isSelect: Bool? = nil, title: String? = nil, index: Int? = nil) {
         self.isSelect = isSelect
         self.title = title
+        self.index = index
     }
+
 }

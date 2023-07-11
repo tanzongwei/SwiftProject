@@ -9,6 +9,7 @@ import UIKit
 
 class TZWMessageViewController: TZWBaseViewController,HideNavigationBarProtocol {
     
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard TZWUser.isLogin() else {
@@ -27,7 +28,9 @@ class TZWMessageViewController: TZWBaseViewController,HideNavigationBarProtocol 
     
     func setUI() {
         self.view.backgroundColor = UIColor.white
-        view.addSubview(pageView)
+        view.addSubview(pageTopView)
+        view.addSubview(pageCollectionView)
+        pageCollectionView.moveToIndex(index: 0, animation: false)
     }
     
     // MARK: 通知处理
@@ -49,9 +52,43 @@ class TZWMessageViewController: TZWBaseViewController,HideNavigationBarProtocol 
     
     // MARK: 懒加载
     
-    lazy var pageView: TZWMessageTopPageView = {
+    lazy var pageTopView: TZWMessageTopPageView = {
         let pageView = TZWMessageTopPageView(frame: CGRectMake(0, SL_SAFE_AREA_INSETS_TOP, SL_SCREEN_WIDTH, 44))
+        pageView.delegate = self
         return pageView
     }()
+    
+    lazy var pageCollectionView: TZWCollectionPageView = {
+        let collectionView = TZWCollectionPageView(frame: CGRectMake(0, pageTopView.bottom, SL_SCREEN_WIDTH, SL_SCREEN_HEIGHT - pageTopView.bottom))
+        collectionView.dataSource = self
+        return collectionView
+    }()
 
+}
+
+extension TZWMessageViewController: TZWCollectionPageViewDataSource, TZWMessageTopPageViewDelegate {
+    
+    func numberOfSection(pageView: TZWCollectionPageView) -> Int {
+        return 3
+    }
+    
+    func pageView(pageView: TZWCollectionPageView, index: Int) -> UIView? {
+        if index >= 3 {
+            return nil
+        }
+        
+        let contentView = TZWMessageContentView(frame: self.pageCollectionView.bounds)
+        if ((index % 2) != 0) {
+            contentView.backgroundColor = UIColor.blue
+        } else {
+            contentView.backgroundColor = UIColor.green
+        }
+        return contentView
+        
+    }
+    
+    
+    func clickTopPage(itemModel: TZWMessageTopItemModel) {
+        self.pageCollectionView.moveToIndex(index: itemModel.index!, animation: false)
+    }
 }
