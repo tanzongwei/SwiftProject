@@ -17,6 +17,9 @@
 		6523726A2A4ED1AB00BE16F6 /* TZWMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */; };
 		658039552A5BA9E500DB7DC3 /* TZWUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658039542A5BA9E500DB7DC3 /* TZWUser.swift */; };
 		658039572A5BAC4400DB7DC3 /* TZWKeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658039562A5BAC4400DB7DC3 /* TZWKeyConstant.swift */; };
+		6580395A2A5BEB3500DB7DC3 /* TZWMessageTopPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658039592A5BEB3500DB7DC3 /* TZWMessageTopPageView.swift */; };
+		6580395C2A5BEEDA00DB7DC3 /* TZWMessageTopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580395B2A5BEEDA00DB7DC3 /* TZWMessageTopItemView.swift */; };
+		658039602A5BF2AA00DB7DC3 /* TZWMessageTopItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6580395F2A5BF2AA00DB7DC3 /* TZWMessageTopItemModel.swift */; };
 		65BB8D0F2A4D29DA003289B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */; };
 		65BB8D182A4D29DB003289B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BB8D172A4D29DB003289B6 /* Assets.xcassets */; };
 		65BB8D262A4D29DB003289B6 /* SwiftProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BB8D252A4D29DB003289B6 /* SwiftProjectTests.swift */; };
@@ -74,6 +77,9 @@
 		652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageViewController.swift; sourceTree = "<group>"; };
 		658039542A5BA9E500DB7DC3 /* TZWUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWUser.swift; sourceTree = "<group>"; };
 		658039562A5BAC4400DB7DC3 /* TZWKeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWKeyConstant.swift; sourceTree = "<group>"; };
+		658039592A5BEB3500DB7DC3 /* TZWMessageTopPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageTopPageView.swift; sourceTree = "<group>"; };
+		6580395B2A5BEEDA00DB7DC3 /* TZWMessageTopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageTopItemView.swift; sourceTree = "<group>"; };
+		6580395F2A5BF2AA00DB7DC3 /* TZWMessageTopItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TZWMessageTopItemModel.swift; sourceTree = "<group>"; };
 		65BB8D0B2A4D29DA003289B6 /* SwiftProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB8D0E2A4D29DA003289B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65BB8D172A4D29DB003289B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -242,6 +248,7 @@
 		652372672A4ED18D00BE16F6 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				658039582A5BEB1700DB7DC3 /* View */,
 				652372682A4ED19600BE16F6 /* ViewController */,
 			);
 			path = Message;
@@ -253,6 +260,32 @@
 				652372692A4ED1AB00BE16F6 /* TZWMessageViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		658039582A5BEB1700DB7DC3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6580395E2A5BF19000DB7DC3 /* Model */,
+				6580395D2A5BF08400DB7DC3 /* TopView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6580395D2A5BF08400DB7DC3 /* TopView */ = {
+			isa = PBXGroup;
+			children = (
+				658039592A5BEB3500DB7DC3 /* TZWMessageTopPageView.swift */,
+				6580395B2A5BEEDA00DB7DC3 /* TZWMessageTopItemView.swift */,
+			);
+			path = TopView;
+			sourceTree = "<group>";
+		};
+		6580395E2A5BF19000DB7DC3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6580395F2A5BF2AA00DB7DC3 /* TZWMessageTopItemModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		65BB8D022A4D29DA003289B6 = {
@@ -630,9 +663,12 @@
 				658039572A5BAC4400DB7DC3 /* TZWKeyConstant.swift in Sources */,
 				652372512A4E71EC00BE16F6 /* TZWConstant.swift in Sources */,
 				65C251CB2A580E320087A5FB /* TZWErrorWarningView.swift in Sources */,
+				6580395A2A5BEB3500DB7DC3 /* TZWMessageTopPageView.swift in Sources */,
 				65C251542A5260A80087A5FB /* TZWMineInfoView.swift in Sources */,
+				658039602A5BF2AA00DB7DC3 /* TZWMessageTopItemModel.swift in Sources */,
 				65C251C52A56A4960087A5FB /* TZWCommunityViewController.swift in Sources */,
 				65C251682A53B65F0087A5FB /* TZWLoginPhoneView.swift in Sources */,
+				6580395C2A5BEEDA00DB7DC3 /* TZWMessageTopItemView.swift in Sources */,
 				65C251792A542D7F0087A5FB /* NSString+BAEncrypt.m in Sources */,
 				652372632A4EB81200BE16F6 /* TZWMineViewController.swift in Sources */,
 			);

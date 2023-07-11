@@ -97,7 +97,7 @@ class TZWLoginViewController: TZWBaseViewController,HideNavigationBarProtocol {
     lazy var bgImageView: UIImageView = {
         let iconView = UIImageView()
         iconView.image = UIImage(named: "login_bg")
-        iconView.contentMode = .scaleAspectFit
+        iconView.contentMode = .scaleAspectFill
         iconView.isUserInteractionEnabled = true
         return iconView
     }()

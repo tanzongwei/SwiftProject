@@ -15,7 +15,6 @@ class TZWMineViewController: TZWBaseViewController,HideNavigationBarProtocol {
             TZWLoginPage.share.showLogin()
             return
         }
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     override func viewDidLoad() {
